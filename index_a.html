@@ -2,6 +2,15 @@
 <html lang="ko">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17872201033"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-17872201033');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lifolio - AI 자동 분류 앨범</title>
@@ -22,7 +31,7 @@
         <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
             <div class="font-black text-2xl text-blue-600">Lifolio</div>
             <button
-                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-bold transition text-sm">
+                class="cta-button bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-bold transition text-sm">
                 사전등록하기
             </button>
         </div>
@@ -47,7 +56,7 @@
                 </p>
                 <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <button
-                        class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg shadow-blue-200 transition transform hover:-translate-y-1">
+                        class="cta-button bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg shadow-blue-200 transition transform hover:-translate-y-1">
                         1초만에 정리 시작하기
                     </button>
                     <button
@@ -77,9 +86,10 @@
             </h2>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition animate-on-scroll">
-                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-2xl">🤖
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition animate-on-scroll group">
+                    <div class="h-48 rounded-xl mb-6 overflow-hidden relative shadow-inner">
+                        <img src="assets/ad_creative_version_a_1768294665244.png" alt="AI Sorting Visualization"
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
                     </div>
                     <h3 class="text-xl font-bold mb-3">AI 자동 분류</h3>
                     <p class="text-gray-600 leading-relaxed">
@@ -96,8 +106,24 @@
                     </p>
                 </div>
                 <!-- Feature 3 -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition animate-on-scroll">
-                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6 text-2xl">📅
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition animate-on-scroll group">
+                    <div
+                        class="h-48 bg-purple-50 rounded-xl mb-6 flex items-center justify-center overflow-hidden relative">
+                        <!-- CSS Representation of Growth Calendar -->
+                        <div class="grid grid-cols-7 gap-1 p-4 w-full h-full opacity-50">
+                            <div class="bg-purple-200 rounded aspect-square"></div>
+                            <div class="bg-purple-200 rounded aspect-square"></div>
+                            <div class="bg-purple-300 rounded aspect-square"></div>
+                            <div class="bg-purple-200 rounded aspect-square"></div>
+                            <div class="bg-purple-100 rounded aspect-square"></div>
+                            <div class="bg-purple-200 rounded aspect-square"></div>
+                            <div class="bg-purple-300 rounded aspect-square"></div>
+                            <!-- More dots... -->
+                        </div>
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-white/80 to-transparent">
+                            <div class="text-6xl transform group-hover:scale-110 transition duration-500">📅</div>
+                        </div>
                     </div>
                     <h3 class="text-xl font-bold mb-3">성장 기록</h3>
                     <p class="text-gray-600 leading-relaxed">
@@ -107,6 +133,43 @@
             </div>
         </div>
     </section>
+
+    <!-- Email Modal -->
+    <div id="emailModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 hidden opacity-0 transition-opacity duration-300">
+        <div id="modalContent" class="relative bg-white rounded-2xl p-8 max-w-md w-full mx-4 transform scale-95 transition-transform duration-300">
+            <div id="formContent">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl">🎁</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">출시 알림 신청</h3>
+                    <p class="text-gray-600">이메일을 남겨주시면<br><strong class="text-blue-600">출시 시 30% 할인 쿠폰</strong>을 드려요!</p>
+                </div>
+                <form id="emailForm" class="space-y-4">
+                    <input
+                        type="email"
+                        id="emailInput"
+                        placeholder="이메일 주소를 입력하세요"
+                        required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    >
+                    <button
+                        type="submit"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold transition">
+                        할인 쿠폰 받기
+                    </button>
+                </form>
+                <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+            </div>
+            <div id="successMessage" class="hidden text-center">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-3xl">✅</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">신청 완료!</h3>
+                <p class="text-gray-600">출시되면 할인 쿠폰과 함께<br>가장 먼저 알려드릴게요.</p>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-white py-12 border-t border-gray-100">

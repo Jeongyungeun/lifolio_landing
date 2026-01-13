@@ -2,6 +2,15 @@
 <html lang="ko">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17872201033"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-17872201033');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lifolio - 가족 역사책</title>
@@ -28,15 +37,22 @@
         <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
             <div class="font-serif font-bold text-2xl text-white">Lifolio</div>
             <button
-                class="bg-white text-black hover:bg-gray-200 px-6 py-2 rounded-sm font-serif font-bold transition text-sm">
+                class="cta-button bg-white text-black hover:bg-gray-200 px-6 py-2 rounded-sm font-serif font-bold transition text-sm">
                 기록 시작하기
             </button>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-24 px-4 min-h-screen flex items-center">
-        <div class="max-w-5xl mx-auto text-center animate-on-scroll">
+    <section class="min-h-screen flex items-center relative overflow-hidden">
+        <!-- Background Visual -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/ad_creative_version_c_1768294884825.png" alt="Premium Family Book Background"
+                class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#1a1a1a] via-[#1a1a1a]/80 to-black z-10"></div>
+        </div>
+
+        <div class="max-w-5xl mx-auto text-center animate-on-scroll relative z-20 pt-32 pb-24 px-4">
 
             <p class="text-gray-400 font-serif mb-6 tracking-widest uppercase text-sm">Legacy & Heritage</p>
 
@@ -52,7 +68,7 @@
             </p>
 
             <button
-                class="border border-white hover:bg-white hover:text-black text-white px-10 py-4 rounded-none font-serif text-lg transition duration-500">
+                class="cta-button border border-white hover:bg-white hover:text-black text-white px-10 py-4 rounded-none font-serif text-lg transition duration-500">
                 나만의 역사 기록하기
             </button>
 
@@ -100,6 +116,43 @@
 
         </div>
     </section>
+
+    <!-- Email Modal -->
+    <div id="emailModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 hidden opacity-0 transition-opacity duration-300">
+        <div id="modalContent" class="relative bg-[#1a1a1a] border border-gray-700 rounded-none p-8 max-w-md w-full mx-4 transform scale-95 transition-transform duration-300">
+            <div id="formContent">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-yellow-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl">🎁</span>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-2">출시 알림 신청</h3>
+                    <p class="text-gray-400">이메일을 남겨주시면<br><strong class="text-yellow-400">출시 시 30% 할인 쿠폰</strong>을 드려요!</p>
+                </div>
+                <form id="emailForm" class="space-y-4">
+                    <input
+                        type="email"
+                        id="emailInput"
+                        placeholder="이메일 주소를 입력하세요"
+                        required
+                        class="w-full px-4 py-3 bg-black border border-gray-700 text-white rounded-none focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                    >
+                    <button
+                        type="submit"
+                        class="w-full bg-white hover:bg-gray-200 text-black py-3 rounded-none font-serif font-bold transition">
+                        할인 쿠폰 받기
+                    </button>
+                </form>
+                <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-white text-2xl">&times;</button>
+            </div>
+            <div id="successMessage" class="hidden text-center">
+                <div class="w-16 h-16 bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-3xl">✅</span>
+                </div>
+                <h3 class="text-2xl font-serif font-bold text-white mb-2">신청 완료!</h3>
+                <p class="text-gray-400">출시되면 할인 쿠폰과 함께<br>가장 먼저 알려드릴게요.</p>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-[#1a1a1a] py-12 border-t border-gray-800">
