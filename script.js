@@ -98,7 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Google Ads 전환 추적
                     if (typeof gtag !== 'undefined') {
                         gtag('event', 'conversion', {
-                            'send_to': 'AW-17872201033/submit_email',
+                            'send_to': 'AW-17872201033/1MPbCKbolOIbEMnKkMpC',
+                            'value': 1.0,
+                            'currency': 'KRW',
                             'event_callback': function() {
                                 console.log('Conversion tracked');
                             }
