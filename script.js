@@ -21,6 +21,20 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
+    // 영상 음소거 토글
+    const heroVideo = document.getElementById('heroVideo');
+    const muteToggle = document.getElementById('muteToggle');
+    const mutedIcon = document.getElementById('mutedIcon');
+    const unmutedIcon = document.getElementById('unmutedIcon');
+
+    if (muteToggle && heroVideo) {
+        muteToggle.addEventListener('click', () => {
+            heroVideo.muted = !heroVideo.muted;
+            mutedIcon.classList.toggle('hidden');
+            unmutedIcon.classList.toggle('hidden');
+        });
+    }
+
     // 모달 관련 코드
     const modal = document.getElementById('emailModal');
     const modalContent = document.getElementById('modalContent');

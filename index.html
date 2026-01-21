@@ -3,36 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lifolio PMF Test</title>
+    <title>Lifolio - 세대를 잇는 앨범</title>
+    <meta name="description" content="아이 사진 12,000장. 부모님 사진은 몇 장이세요? Lifolio로 세대를 잇는 가족 앨범을 만들어보세요.">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17872201033"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-17872201033');
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'warm-beige': '#F5F0E8',
+                        'warm-brown': '#8B7355',
+                        'warm-brown-dark': '#6B5344',
+                        'warm-cream': '#FDF9F3',
+                        'warm-gray': '#9B9B9B',
+                        'warm-text': '#3D3D3D',
+                    },
+                    fontFamily: {
+                        'noto': ['"Noto Sans KR"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        body { font-family: 'Noto Sans KR', sans-serif; }
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(180deg, #FDF9F3 0%, #F5F0E8 100%);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #FDF9F3 0%, #EDE4D8 50%, #F5F0E8 100%);
+        }
     </style>
 </head>
-<body class="bg-gray-50 min-h-screen flex flex-col items-center justify-center p-4">
+<body class="font-noto text-warm-text bg-warm-cream">
 
-    <div class="max-w-md w-full bg-white rounded-xl shadow-lg p-8 space-y-6">
-        <h1 class="text-2xl font-bold text-center text-gray-800">Lifolio PMF Test</h1>
-        <p class="text-center text-gray-600">포지셔닝 테스트를 위한 랜딩페이지 버전입니다.</p>
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen flex flex-col justify-center px-6 py-16 md:py-24">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-on-scroll">
+                아이 사진, <span class="text-warm-brown">12,000장.</span><br>
+                부모님 사진은 몇 장이세요?
+            </h1>
 
-        <div class="space-y-4">
-            <a href="index_a.html" class="block w-full text-center p-4 rounded-lg border border-blue-200 hover:border-blue-500 hover:bg-blue-50 transition">
-                <span class="block font-bold text-blue-600">Version A</span>
-                <span class="text-sm text-gray-500">AI 자동 분류 앨범</span>
-            </a>
+            <p class="text-lg md:text-xl text-warm-gray mb-10 animate-on-scroll">
+                우리는 아래로만 찍고, 위로는 찍지 않았습니다.
+            </p>
 
-            <a href="index_b.html" class="block w-full text-center p-4 rounded-lg border border-green-200 hover:border-green-500 hover:bg-green-50 transition">
-                <span class="block font-bold text-green-600">Version B</span>
-                <span class="text-sm text-gray-500">부모님께 전하는 손주 사진</span>
-            </a>
+            <!-- Hero Video -->
+            <div class="w-full max-w-2xl mx-auto mb-10 animate-on-scroll relative">
+                <video
+                    id="heroVideo"
+                    class="w-full rounded-2xl shadow-lg"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                >
+                    <source src="assets/lifolio.mp4" type="video/mp4">
+                    브라우저가 영상을 지원하지 않습니다.
+                </video>
+                <button
+                    id="muteToggle"
+                    class="absolute bottom-4 right-4 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-200"
+                    aria-label="음소거 토글"
+                >
+                    <!-- Muted Icon (default) -->
+                    <svg id="mutedIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                    </svg>
+                    <!-- Unmuted Icon (hidden) -->
+                    <svg id="unmutedIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                    </svg>
+                </button>
+            </div>
 
-            <a href="index_c.html" class="block w-full text-center p-4 rounded-lg border border-purple-200 hover:border-purple-500 hover:bg-purple-50 transition">
-                <span class="block font-bold text-purple-600">Version C</span>
-                <span class="text-sm text-gray-500">가족 역사책/스토리</span>
-            </a>
+            <button class="cta-button bg-warm-brown hover:bg-warm-brown-dark text-white font-semibold py-4 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg animate-on-scroll">
+                출시 알림 받기
+            </button>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="gradient-bg py-20 md:py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-2xl md:text-4xl font-bold mb-6">
+                    할아버지 사진은요?
+                </h2>
+                <p class="text-lg md:text-xl text-warm-gray leading-relaxed">
+                    언젠가 후회할지도 몰라요.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+                <div class="animate-on-scroll">
+                    <div class="bg-white rounded-2xl p-8 shadow-sm">
+                        <div class="aspect-square bg-warm-beige rounded-xl mb-6 flex items-center justify-center overflow-hidden">
+                            <img src="assets/hero_grandparents_tablet_1768270338374.png" alt="부모님과 함께하는 순간" class="w-full h-full object-cover">
+                        </div>
+                        <p class="text-warm-gray text-center">
+                            "엄마 젊었을 때 사진이 이거밖에 없어?"
+                        </p>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll">
+                    <div class="bg-white rounded-2xl p-8 shadow-sm">
+                        <div class="aspect-square bg-warm-beige rounded-xl mb-6 flex items-center justify-center overflow-hidden">
+                            <img src="assets/hero_history_book_1768270355249.png" alt="소중한 가족 기록" class="w-full h-full object-cover">
+                        </div>
+                        <p class="text-warm-gray text-center">
+                            "아빠 어렸을 때 사진 좀 보여줘"
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-16 animate-on-scroll">
+                <p class="text-xl md:text-2xl font-medium text-warm-brown">
+                    지금이 아니면, 영영 못 찍을 수도 있어요.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="bg-white py-20 md:py-32 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16 animate-on-scroll">
+                <p class="text-warm-brown font-medium mb-4">SOLUTION</p>
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">
+                    Lifolio<br>
+                    <span class="text-warm-brown">세대를 잇는 앨범</span>
+                </h2>
+            </div>
+
+            <!-- Feature 1 -->
+            <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center mb-20 animate-on-scroll">
+                <div class="order-2 md:order-1">
+                    <div class="bg-warm-cream rounded-2xl p-4">
+                        <img src="assets/hero_ai_album_1768270322876.png" alt="AI 뮤직비디오 생성" class="w-full rounded-xl">
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <div class="inline-block bg-warm-beige text-warm-brown font-medium px-4 py-2 rounded-full text-sm mb-4">
+                        Feature 01
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">
+                        사진 올리면<br>뮤직비디오가 자동 생성
+                    </h3>
+                    <p class="text-warm-gray text-lg leading-relaxed">
+                        그냥 사진만 올리세요. AI가 자동으로 음악과 함께 감동적인 영상을 만들어드립니다. 편집 걱정은 이제 그만.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center mb-20 animate-on-scroll">
+                <div>
+                    <div class="inline-block bg-warm-beige text-warm-brown font-medium px-4 py-2 rounded-full text-sm mb-4">
+                        Feature 02
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">
+                        부모님도 쉽게<br>볼 수 있는 푸시 알림
+                    </h3>
+                    <p class="text-warm-gray text-lg leading-relaxed">
+                        새 사진이 올라오면 부모님 핸드폰에 바로 알림. 카카오톡 보내듯 쉽게, 매일매일 손주 소식을 전해드려요.
+                    </p>
+                </div>
+                <div>
+                    <div class="bg-warm-cream rounded-2xl p-8 flex items-center justify-center">
+                        <div class="bg-white rounded-xl shadow-lg p-6 max-w-xs">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 bg-warm-brown rounded-full flex items-center justify-center">
+                                    <span class="text-white text-sm font-bold">L</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-sm">Lifolio</p>
+                                    <p class="text-xs text-warm-gray">방금 전</p>
+                                </div>
+                            </div>
+                            <p class="text-sm">
+                                "민준이가 새 사진을 올렸어요! 오늘 유치원에서 그린 그림이래요 🎨"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center animate-on-scroll">
+                <div class="order-2 md:order-1">
+                    <div class="bg-warm-cream rounded-2xl p-4">
+                        <img src="assets/feature_timeline_ui_1768270372637.png" alt="세대 타임라인" class="w-full rounded-xl">
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <div class="inline-block bg-warm-beige text-warm-brown font-medium px-4 py-2 rounded-full text-sm mb-4">
+                        Feature 03
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">
+                        세대를 관통하는<br>타임라인
+                    </h3>
+                    <p class="text-warm-gray text-lg leading-relaxed">
+                        할아버지의 어린 시절, 아버지의 청춘, 그리고 나의 오늘. 한 화면에서 우리 가족의 역사를 만나보세요.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gradient-bg py-20 md:py-32 px-6">
+        <div class="max-w-2xl mx-auto text-center animate-on-scroll">
+            <h2 class="text-2xl md:text-4xl font-bold mb-6">
+                출시되면 가장 먼저<br>알려드릴게요
+            </h2>
+            <p class="text-warm-gray text-lg mb-10">
+                사전 등록하시면 특별 할인 혜택을 드립니다.
+            </p>
+
+            <button class="cta-button bg-warm-brown hover:bg-warm-brown-dark text-white font-semibold py-4 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                알림 신청하기
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-warm-text py-12 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="mb-6">
+                <span class="text-2xl font-bold text-white">Lifolio</span>
+            </div>
+            <p class="text-warm-gray text-sm">
+                &copy; 2026 Lifolio. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Email Modal -->
+    <div id="emailModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300 px-4">
+        <div id="modalContent" class="bg-white rounded-2xl p-8 max-w-md w-full transform scale-95 transition-transform duration-300">
+            <div id="formContent">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-bold">출시 알림 신청</h3>
+                    <button id="closeModal" class="text-warm-gray hover:text-warm-text transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="text-warm-gray mb-6">
+                    이메일을 남겨주시면 Lifolio 출시 소식과 함께 특별 할인 쿠폰을 보내드립니다.
+                </p>
+
+                <form id="emailForm">
+                    <input
+                        type="email"
+                        id="emailInput"
+                        placeholder="이메일 주소를 입력하세요"
+                        required
+                        class="w-full px-4 py-3 border border-warm-beige rounded-xl mb-4 focus:outline-none focus:border-warm-brown transition"
+                    >
+                    <button
+                        type="submit"
+                        class="w-full bg-warm-brown hover:bg-warm-brown-dark text-white font-semibold py-3 rounded-xl transition"
+                    >
+                        할인 쿠폰 받기
+                    </button>
+                </form>
+            </div>
+
+            <div id="successMessage" class="hidden text-center py-8">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2">신청 완료!</h3>
+                <p class="text-warm-gray">출시되면 가장 먼저 알려드릴게요.</p>
+            </div>
         </div>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
