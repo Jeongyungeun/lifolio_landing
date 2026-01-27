@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifolio (@lifolio_official) • Instagram photos and videos</title>
+    <meta name="description" content="Lifolio Official Instagram">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Noto Sans KR -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ig-blue': '#0095f6',
+                        'ig-gray': '#dbdbdb',
+                        'ig-text': '#262626',
+                        'ig-text-light': '#8e8e8e',
+                        'lifolio-brown': '#8B7355',
+                    },
+                    fontFamily: {
+                        'noto': ['"Noto Sans KR"', 'sans-serif'],
+                        'system': ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                    },
+                    screens: {
+                        'xs': '480px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #fafafa;
+        }
+
+        .story-ring {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            padding: 2px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body class="bg-white md:bg-[#fafafa] min-h-screen text-[#262626]">
+
+    <!-- Main Container -->
+    <main class="max-w-md mx-auto bg-white min-h-screen shadow-sm relative pb-16">
+
+        <!-- Header -->
+        <header class="flex justify-between items-center px-4 py-2 border-b border-gray-100 sticky top-0 bg-white z-10">
+            <div class="flex items-center gap-4">
+                <a href="#" class="text-xl">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+                <h1 class="text-lg font-bold">lifolio_official</h1>
+                <i class="fa-solid fa-certificate text-blue-500 text-xs"></i>
+            </div>
+            <div class="flex items-center gap-5">
+                <i class="fa-regular fa-bell text-xl"></i>
+                <i class="fa-solid fa-ellipsis text-xl"></i>
+            </div>
+        </header>
+
+        <!-- Profile Section -->
+        <div class="px-4 py-4">
+            <div class="flex items-center justify-between mb-4">
+                <!-- Profile Image -->
+                <div class="story-ring w-20 h-20 flex-shrink-0 cursor-pointer">
+                    <div class="bg-white p-[2px] w-full h-full rounded-full overflow-hidden">
+                        <img src="assets/hero_ai_album_1768270322876.png" alt="Profile"
+                            class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="flex gap-6 text-center ml-4">
+                    <div>
+                        <div class="font-bold text-lg">12K</div>
+                        <div class="text-xs">Posts</div>
+                    </div>
+                    <div>
+                        <div class="font-bold text-lg">152K</div>
+                        <div class="text-xs">Followers</div>
+                    </div>
+                    <div>
+                        <div class="font-bold text-lg">0</div>
+                        <div class="text-xs">Following</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bio -->
+            <div class="mb-4">
+                <div class="font-bold text-sm">Lifolio | 세대를 잇는 앨범</div>
+                <div class="text-sm whitespace-pre-line">아이 사진 12,000장 👶
+                    부모님 사진은 몇 장이세요? 👴👵
+                    세대를 잇는 가장 쉬운 방법, 라이폴리오
+                    👇 사전 예약하고 혜택 받기</div>
+                <a href="index.html"
+                    class="text-[#00376b] text-sm font-semibold hover:underline">lifolio.com/pre-order</a>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex gap-2 mb-6">
+                <button
+                    class="flex-1 bg-lifolio-brown text-white font-semibold py-1.5 rounded-lg text-sm">Follow</button>
+                <button class="flex-1 bg-gray-100 text-black font-semibold py-1.5 rounded-lg text-sm">Message</button>
+                <button class="bg-gray-100 text-black px-2 py-1.5 rounded-lg text-sm">
+                    <i class="fa-solid fa-user-plus"></i>
+                </button>
+            </div>
+
+            <!-- Story Highlights (Mock) -->
+            <div class="flex gap-4 overflow-x-auto pb-2 mb-2 scrollbar-hide">
+                <div class="flex flex-col items-center gap-1 cursor-pointer">
+                    <div class="w-16 h-16 rounded-full bg-gray-100 border border-gray-200 p-1">
+                        <div class="w-full h-full rounded-full bg-gray-200 overflow-hidden">
+                            <img src="assets/hero_grandparents_tablet_1768270338374.png"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <span class="text-xs">Reviews</span>
+                </div>
+                <div class="flex flex-col items-center gap-1 cursor-pointer">
+                    <div class="w-16 h-16 rounded-full bg-gray-100 border border-gray-200 p-1">
+                        <div class="w-full h-full rounded-full bg-gray-200 overflow-hidden">
+                            <img src="assets/hero_history_book_1768270355249.png" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <span class="text-xs">Features</span>
+                </div>
+                <div class="flex flex-col items-center gap-1 cursor-pointer">
+                    <div class="w-16 h-16 rounded-full bg-gray-100 border border-gray-200 p-1">
+                        <div class="w-full h-full rounded-full bg-gray-200 overflow-hidden">
+                            <img src="assets/feature_timeline_ui_1768270372637.png" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <span class="text-xs">Q&A</span>
+                </div>
+                <div class="flex flex-col items-center gap-1 cursor-pointer">
+                    <div
+                        class="w-16 h-16 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center">
+                        <i class="fa-solid fa-plus text-gray-400"></i>
+                    </div>
+                    <span class="text-xs">New</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="flex border-t border-gray-200">
+            <div class="flex-1 flex justify-center py-3 border-b-2 border-black cursor-pointer">
+                <i class="fa-solid fa-table-cells text-xl"></i>
+            </div>
+            <div class="flex-1 flex justify-center py-3 cursor-pointer text-gray-400">
+                <i class="fa-solid fa-clapperboard text-xl"></i>
+            </div>
+            <div class="flex-1 flex justify-center py-3 cursor-pointer text-gray-400">
+                <i class="fa-solid fa-user-tag text-xl"></i>
+            </div>
+        </div>
+
+        <!-- Photo Grid -->
+        <div class="grid grid-cols-3 gap-0.5 pb-20">
+            <!-- Row 1 -->
+            <div class="aspect-square bg-gray-100 overflow-hidden relative group cursor-pointer">
+                <img src="assets/ad_creative_version_c_1768294884825.png" class="w-full h-full object-cover">
+                <i class="fa-solid fa-clone absolute top-2 right-2 text-white drop-shadow-md"></i>
+            </div>
+            <div class="aspect-square bg-gray-100 overflow-hidden cursor-pointer">
+                <img src="assets/hero_ai_album_1768270322876.png" class="w-full h-full object-cover">
+            </div>
+            <div class="aspect-square bg-gray-100 overflow-hidden cursor-pointer">
+                <img src="assets/hero_grandparents_tablet_1768270338374.png" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Row 2 -->
+            <div class="aspect-square bg-gray-100 overflow-hidden relative cursor-pointer">
+                <img src="assets/ad_creative_version_a_1768294665244.png" class="w-full h-full object-cover">
+                <i class="fa-solid fa-play absolute top-2 right-2 text-white drop-shadow-md"></i>
+            </div>
+            <div class="aspect-square bg-gray-100 overflow-hidden cursor-pointer">
+                <img src="assets/hero_history_book_1768270355249.png" class="w-full h-full object-cover">
+            </div>
+            <div class="aspect-square bg-gray-100 overflow-hidden cursor-pointer">
+                <img src="assets/feature_timeline_ui_1768270372637.png" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Row 3 -->
+            <div class="aspect-square bg-gray-100 overflow-hidden cursor-pointer">
+                <img src="assets/ad_creative_b.png" class="w-full h-full object-cover">
+            </div>
+            <div
+                class="aspect-square bg-gray-100 overflow-hidden cursor-pointer flex items-center justify-center bg-gray-200">
+                <span class="text-xs text-gray-500">Video</span>
+            </div>
+            <div
+                class="aspect-square bg-gray-100 overflow-hidden cursor-pointer flex items-center justify-center bg-gray-200">
+                <span class="text-xs text-gray-500">More...</span>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav
+            class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-6 py-3 flex justify-between items-center z-50 max-w-md mx-auto">
+            <i class="fa-solid fa-house text-2xl text-gray-400 cursor-pointer hover:text-black"></i>
+            <i class="fa-solid fa-magnifying-glass text-2xl text-gray-400 cursor-pointer hover:text-black"></i>
+            <i class="fa-regular fa-square-plus text-2xl text-gray-400 cursor-pointer hover:text-black"></i>
+            <i class="fa-solid fa-clapperboard text-2xl text-gray-400 cursor-pointer hover:text-black"></i>
+            <div class="w-6 h-6 rounded-full overflow-hidden border border-black cursor-pointer">
+                <img src="assets/hero_ai_album_1768270322876.png" class="w-full h-full object-cover">
+            </div>
+        </nav>
+    </main>
+
+</body>
+
+</html>
