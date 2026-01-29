@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifolio - 지원 및 문의</title>
+    <meta name="description" content="Lifolio 앱 이용 관련 지원 및 문의 페이지입니다. 궁금한 점이 있으시면 언제든 연락주세요.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'warm-beige': '#F5F0E8',
+                        'warm-brown': '#8B7355',
+                        'warm-brown-dark': '#6B5344',
+                        'warm-cream': '#FDF9F3',
+                        'warm-gray': '#9B9B9B',
+                        'warm-text': '#3D3D3D',
+                    },
+                    fontFamily: {
+                        'noto': ['"Noto Sans KR"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="font-noto text-warm-text bg-warm-cream min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="py-6 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <a href="../index.html"
+                class="text-2xl font-bold text-warm-brown hover:text-warm-brown-dark transition">Lifolio</a>
+            <a href="../index.html" class="text-sm text-warm-gray hover:text-warm-brown transition">홈으로 돌아가기</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center px-6 py-20">
+        <div class="max-w-xl w-full bg-white rounded-3xl p-10 shadow-sm border border-warm-beige/50">
+            <h1 class="text-3xl md:text-4xl font-bold mb-8 text-center text-warm-text">지원 및 문의</h1>
+
+            <p class="text-lg text-warm-gray leading-relaxed mb-10 text-center">
+                Lifolio에 대해 궁금한 점이 있으시거나,<br>
+                이용 중 도움이 필요하시면 언제든 연락주세요.<br>
+                빠르게 답변 드리겠습니다.
+            </p>
+
+            <div class="space-y-6">
+                <!-- Email -->
+                <div class="flex items-start gap-4 p-4 rounded-xl bg-warm-cream">
+                    <div class="w-10 h-10 rounded-full bg-warm-brown/10 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-warm-brown" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-warm-text mb-1">이메일 문의</h3>
+                        <a href="mailto:likeflameyungun@gmail.com"
+                            class="text-warm-brown hover:underline break-all">likeflameyungun@gmail.com</a>
+                    </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="flex items-start gap-4 p-4 rounded-xl bg-warm-cream">
+                    <div class="w-10 h-10 rounded-full bg-warm-brown/10 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-warm-brown" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-warm-text mb-1">전화 문의</h3>
+                        <a href="tel:010-8527-1614" class="text-warm-brown hover:underline">010-8527-1614</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 text-center">
+                <p class="text-sm text-warm-gray">
+                    운영 시간: 평일 10:00 - 18:00 (주말/공휴일 휴무)
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-warm-beige border-t border-warm-brown/10 py-6 text-center text-xs text-warm-gray font-noto">
+        <p>사업자명: 옵티오랩 | 대표자: 정윤근 | 사업자등록번호: 864-54-00799</p>
+        <p class="mt-1">주소: 경남 진주시 북장대로 85-1 | 연락처: 010-8527-1614 | 이메일: likeflameyungun@gmail.com</p>
+        <div class="mt-3 space-x-2">
+            <a href="../index.html" class="hover:text-warm-brown underline">홈</a>
+            <span>|</span>
+            <a href="../privacy.html" class="hover:text-warm-brown underline">개인정보처리방침</a>
+            <span>|</span>
+            <a href="#" class="hover:text-warm-brown underline font-bold">지원 및 문의</a>
+        </div>
+    </footer>
+</body>
+
+</html>
